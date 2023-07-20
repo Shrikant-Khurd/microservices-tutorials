@@ -1,0 +1,1214 @@
+{
+	"info": {
+		"_postman_id": "9853a70e-4ba1-4e21-93fa-4035b50855b2",
+		"name": "E-commerce API's",
+		"description": "The E-Commerce Application API Collection for Postman is a comprehensive set of pre-configured API requests that facilitate testing, debugging, and interaction with an e-commerce web application's backend. This collection serves as a powerful tool for developers, testers, and stakeholders to efficiently work with the application's APIs and ensure seamless integration between different components of the system.\n\nFeatures of the Collection:\n\nAuthentication Endpoints: The collection includes endpoints for user registration, login, and token management using standard authentication methods like OAuth, JWT, or API keys, depending on the application's security implementation.\n\nProduct Catalog Management: Access endpoints to retrieve, create, update, and delete product information. Developers can test product listing, filtering, and pagination functionalities to ensure the smooth functioning of the product catalog.\n\nOrder Management: Test the APIs that handle order functionalities, review endpoints related to order placement, tracking, and order history retrieval.\n\nShopping Cart Management: Test the APIs that handle shopping cart functionalities, including adding items, updating quantities, and removing products from the cart.\n\nUser Profile and Address Management: Test APIs for user profile information retrieval, update, and deletion. Validate address-related endpoints for shipping and billing address management.\n\nPayment Gateway Integration: This collection offers endpoints to simulate interactions with payment gateways, allowing users to test payment processing, refund, and payment status verification functionalities.\n\nReview and Rating: Evaluate endpoints that handle product reviews and ratings. Test the ability to submit, retrieve, and display user reviews for products.\n\nSearch and Filtering: Verify search functionalities with API requests to fetch relevant products based on specific criteria, such as keywords, categories, and price ranges.\n\nNotifications and Messaging: Test endpoints that manage communication with users through various channels, such as emails, push notifications, or in-app messages.\n\nCart Abandonment and Recommendations: Interact with APIs that handle cart abandonment tracking and personalized product recommendations based on user behavior.\n\nFeatures of the Collection:\n\n1. Auth Service:\n    - Endpoints for user registration, login, and token management using standard authentication methods like OAuth or JWT.\n    - Verify the generation and expiration of access tokens, as well as token-based authorization for protected resources.\n2. User Service:\n    - API requests to create, update, retrieve, and delete user profiles and related information.\n    - Test user-specific functionalities such as password reset, address management, and account preferences.\n3. Product Service:\n    - Endpoints for managing the product catalog, including creating, updating, and deleting products.\n    - Test product retrieval, filtering, sorting, and pagination functionalities.\n4. Cart Service:\n    - APIs to handle shopping cart functionalities, such as adding, updating, and removing items from the cart.\n    - Validate the ability to calculate the total cart value and apply discounts or promotions.\n5. Order Service:\n    - Endpoints to manage order placement, tracking, and retrieval of order history.\n    - Test order status updates, cancellation, and order detail retrieval.\n6. Inventory Service:\n    - APIs to manage product inventory, including stock levels, replenishment, and product availability.\n    - Verify inventory-related functionalities to prevent overselling and maintain accurate stock information.\n\nHow to Use:  \nTo use the E-Commerce Application API Collection in Postman, simply import the collection and environment files provided. The environment file allows users to configure variables such as base URLs, authentication tokens, and other parameters necessary for successful API interactions. Once imported, developers can easily execute requests, view responses, and analyze data to ensure the application's APIs are functioning correctly.\n\nPlease note that this collection is intended for testing and development purposes only and should not be used on a production system. It is crucial to ensure proper authorization and access control mechanisms are in place before deploying the APIs to a live environment.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User-Auth-Service",
+			"item": [
+				{
+					"name": "Users API's",
+					"item": [
+						{
+							"name": "http://localhost:9191/api/users/add-address",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n        \"street\": \"cybage tower road\",\r\n        \"city\": \"pune\",\r\n        \"state\": \"maharashtra\",\r\n        \"country\": \"india\",\r\n        \"zipCode\": 418028\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9191/api/users/add-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"users",
+										"add-address"
+									]
+								},
+								"description": "Add new address.\r\nGet user details by verifying JWT token. Get user details by user id, the ID is getting from JWT token and add new address.\r\nJWT token is required to run this API."
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:9191/api/users/user-details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3Njg0MzgsImV4cCI6MzA0MTU4MzE4OTA4NjB9.oKLpnGk7TLUgFVHsZRxTbQF3gvepPI6O1ovMwkTzYTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/users/user-details",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"users",
+										"user-details"
+									]
+								},
+								"description": "Get user details by verifying JWT token.\r\nget user Id from JWT token.\r\nJWT token is required to run this API.\r\n\r\n"
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:9191/api/users/address-detail/39",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3Njg0MzgsImV4cCI6MzA0MTU4MzE4OTA4NjB9.oKLpnGk7TLUgFVHsZRxTbQF3gvepPI6O1ovMwkTzYTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/users/address-detail/39",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"users",
+										"address-detail",
+										"39"
+									]
+								},
+								"description": "Get user details by verifying JWT token. Get user details by user id, the ID is getting from JWT token and fetch address of user. \r\nJWT token is required to run this API."
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:9191/api/users/get-all-user-address",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3Njg0MzgsImV4cCI6MzA0MTU4MzE4OTA4NjB9.oKLpnGk7TLUgFVHsZRxTbQF3gvepPI6O1ovMwkTzYTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/users/get-all-user-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"users",
+										"get-all-user-address"
+									]
+								},
+								"description": "Add new address.\r\nGet user details by verifying JWT token. Get user details by user id, the ID is getting from JWT token.\r\nFetching all addresses of logged user.\r\nJWT token is required to run this API."
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:9191/api/users/update-address/39",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3Njg0MzgsImV4cCI6MzA0MTU4MzE4OTA4NjB9.oKLpnGk7TLUgFVHsZRxTbQF3gvepPI6O1ovMwkTzYTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"street\": \"cybage tower road\",\r\n        \"city\": \"pune\",\r\n        \"state\": \"maharashtra\",\r\n        \"country\": \"india\",\r\n        \"zipCode\": 418028\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9191/api/users/update-address/39",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"users",
+										"update-address",
+										"39"
+									]
+								},
+								"description": "Update logged user address by verifying JWT token.\r\nJWT token is required to run this API.\r\n"
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:9191/api/users/set-as-default-address/39",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3Njg0MzgsImV4cCI6MzA0MTU4MzE4OTA4NjB9.oKLpnGk7TLUgFVHsZRxTbQF3gvepPI6O1ovMwkTzYTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/users/set-as-default-address/39",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"users",
+										"set-as-default-address",
+										"39"
+									]
+								},
+								"description": "Set address as default address of logged user.\r\nJWT token is required to run this API."
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:9191/api/users/delete-address/60",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3Njg0MzgsImV4cCI6MzA0MTU4MzE4OTA4NjB9.oKLpnGk7TLUgFVHsZRxTbQF3gvepPI6O1ovMwkTzYTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/users/delete-address/60",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"users",
+										"delete-address",
+										"60"
+									]
+								},
+								"description": "Delete user address from address list.\r\nJWT token is required to run this API."
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:9191/api/users/get-user-by-id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3Njg0MzgsImV4cCI6MzA0MTU4MzE4OTA4NjB9.oKLpnGk7TLUgFVHsZRxTbQF3gvepPI6O1ovMwkTzYTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/users/get-user-by-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"users",
+										"get-user-by-id"
+									]
+								},
+								"description": "Get user details by verifying JWT token.\r\nget user Id from JWT token.\r\nJWT token is required to run this API.\r\n"
+							},
+							"response": []
+						}
+					],
+					"description": "User Profile and Address Management: Test APIs for user profile information retrieval, update, and deletion. Validate address-related endpoints for shipping and billing address management.",
+					"auth": {
+						"type": "noauth"
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Auth API's",
+					"item": [
+						{
+							"name": "http://localhost:9191/api/auth/register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"firstName\": \"Shrikant\",\r\n    \"lastName\": \"Khurd\",\r\n    \"email\": \"shrikantkhurd@gmail.com\",\r\n    \"password\": \"123\",\r\n    \"contactNumber\": 9763645117,\r\n   \"addresses\":[\r\n      \r\n        {\r\n            \"street\":\"mundhva road \",\r\n            \"city\":\"pune\",\r\n            \"state\":\"maharashtra\",\r\n            \"country\":\"india\",\r\n            \"zipCode\":411015\r\n\r\n       }\r\n   ],\r\n   \"roles\": [\r\n            {\r\n                \"id\": 1,\r\n                \"roleName\":\"USER\"\r\n            }\r\n        ]\r\n   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9191/api/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:9191/api/auth/authenticate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n     \"email\":\"shrikantkhurd@gmail.com\",\r\n     \"password\":\"123\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9191/api/auth/authenticate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"auth",
+										"authenticate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:9191/api/auth/roles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/auth/roles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"auth",
+										"roles"
+									]
+								},
+								"description": "List of roles "
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:9191/api/auth/add-role",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3Njg0MzgsImV4cCI6MzA0MTU4MzE4OTA4NjB9.oKLpnGk7TLUgFVHsZRxTbQF3gvepPI6O1ovMwkTzYTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"roleName\":\"USER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9191/api/auth/add-role",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"auth",
+										"add-role"
+									]
+								},
+								"description": "Add new role API"
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:9191/api/auth/current-userRole",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/auth/current-userRole",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"auth",
+										"current-userRole"
+									]
+								},
+								"description": "Get logged in user role"
+							},
+							"response": []
+						}
+					],
+					"description": "Authentication Endpoints: The collection includes endpoints for user registration, login, and token management using standard authentication methods like OAuth, JWT, or API keys, depending on the application's security implementation.",
+					"auth": {
+						"type": "noauth"
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order-Service",
+			"item": [
+				{
+					"name": "http://localhost:9191/api/order/add-order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3NzE1OTIsImV4cCI6MzA0MTU4ODg2NzI4NTB9.XeRu_556RbIU17ZX65op7VDz_hVA9I4ozC3n9AiJzVc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"shippingAddressId\":40,\r\n    \"orderLineProductList\": [\r\n       \r\n        {\r\n            \"productId\": 3,\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9191/api/order/add-order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"order",
+								"add-order"
+							]
+						},
+						"description": "Placed order API.\r\nonly logged in user can place orders.\r\nJWT token is required to run this API."
+					},
+					"response": []
+				},
+				{
+					"name": " http://localhost:9191/api/order/all-orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3NzE1OTIsImV4cCI6MzA0MTU4ODg2NzI4NTB9.XeRu_556RbIU17ZX65op7VDz_hVA9I4ozC3n9AiJzVc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/order/all-orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"order",
+								"all-orders"
+							]
+						},
+						"description": "Get all orders of logged in user.\r\nonly logged in user can place orders.\r\nJWT token is required to run this API."
+					},
+					"response": []
+				}
+			],
+			"description": "Order Management: Test the APIs that handle order functionalities, review endpoints related to order placement, tracking, and order history retrieval.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Product-Service",
+			"item": [
+				{
+					"name": "Category API's",
+					"item": [
+						{
+							"name": " http://localhost:9191/api/category/add/category",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n \r\n    \"categoryName\": \"sports shoes\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9191/api/category/add/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"category",
+										"add",
+										"category"
+									]
+								},
+								"description": "Add new category.\r\nOnly admin have right to add new  category.\r\nJWT token is required to run this API."
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:9191/api/category/category/byId/1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3Njg0MzgsImV4cCI6MzA0MTU4MzE4OTA4NjB9.oKLpnGk7TLUgFVHsZRxTbQF3gvepPI6O1ovMwkTzYTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/category/category/byId/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"category",
+										"category",
+										"byId",
+										"1"
+									]
+								},
+								"description": "Get category details by category id"
+							},
+							"response": []
+						},
+						{
+							"name": " http://localhost:9191/api/category/all/category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/category/all/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"category",
+										"all",
+										"category"
+									]
+								},
+								"description": "Get all categories"
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:9191/api/category/update/category/3",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3Njg0MzgsImV4cCI6MzA0MTU4MzE4OTA4NjB9.oKLpnGk7TLUgFVHsZRxTbQF3gvepPI6O1ovMwkTzYTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "  {\r\n    \r\n        \"categoryName\": \"NIKE sports\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9191/api/category/update/category/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"category",
+										"update",
+										"category",
+										"3"
+									]
+								},
+								"description": "Update category details by category Id.\r\nOnly admin have right to update category details.\r\nJWT token is required to run this API."
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:9191/api/category/delete/16",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3Njg0MzgsImV4cCI6MzA0MTU4MzE4OTA4NjB9.oKLpnGk7TLUgFVHsZRxTbQF3gvepPI6O1ovMwkTzYTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/category/delete/16",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"category",
+										"delete",
+										"16"
+									]
+								},
+								"description": "Delete category from database by category Id.\r\nOnly admin have right to Delete category details.\r\nJWT token is required to run this API."
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "noauth"
+					}
+				},
+				{
+					"name": "Product API's",
+					"item": [
+						{
+							"name": " http://localhost:9191/api/product/add-product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3Njg0MzgsImV4cCI6MzA0MTU4MzE4OTA4NjB9.oKLpnGk7TLUgFVHsZRxTbQF3gvepPI6O1ovMwkTzYTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productName",
+											"value": "Sample product",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sample product description",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "199",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/E:/Java-Workspace-Spring-tool-suite/PMS-Spring-mongoDB/images/mobile.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:9191/api/product/add-product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"product",
+										"add-product"
+									]
+								},
+								"description": "Add new product with image\r\nOnly admin have right to add new product.\r\nJWT token is required to run this API."
+							},
+							"response": []
+						},
+						{
+							"name": " http://localhost:9191/api/product/update/53",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3Njg0MzgsImV4cCI6MzA0MTU4MzE4OTA4NjB9.oKLpnGk7TLUgFVHsZRxTbQF3gvepPI6O1ovMwkTzYTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productName",
+											"value": "Sample product 1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sample product description",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "199",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/E:/Java-Workspace-Spring-tool-suite/PMS-Spring-mongoDB/images/mobile.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:9191/api/product/update/53",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"product",
+										"update",
+										"53"
+									]
+								},
+								"description": "Update product details.\r\nOnly admin have right to update product details.\r\nJWT token is required to run this API."
+							},
+							"response": []
+						},
+						{
+							"name": " http://localhost:9191/api/product/get-all-products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/product/get-all-products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"product",
+										"get-all-products"
+									]
+								},
+								"description": "get all products.\r\nThis API is accessible for all roles(USER,ADMIN)."
+							},
+							"response": []
+						},
+						{
+							"name": " http://localhost:9191/api/product/get-product-byId/53",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/product/get-product-byId/53",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"product",
+										"get-product-byId",
+										"53"
+									]
+								},
+								"description": "get product detail.\r\nThis API is accessible for all roles(USER,ADMIN)."
+							},
+							"response": []
+						},
+						{
+							"name": " http://localhost:9191/api/product/delete/53",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3Njg0MzgsImV4cCI6MzA0MTU4MzE4OTA4NjB9.oKLpnGk7TLUgFVHsZRxTbQF3gvepPI6O1ovMwkTzYTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/product/delete/53",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"product",
+										"delete",
+										"53"
+									]
+								},
+								"description": "Delete product from database \r\nOnly admin have right to delete product details.\r\nJWT token is required to run this API."
+							},
+							"response": []
+						},
+						{
+							"name": " http://localhost:9191/api/product/category?category=1",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9191/api/product/category?category=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9191",
+									"path": [
+										"api",
+										"product",
+										"category"
+									],
+									"query": [
+										{
+											"key": "category",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Get all products of apparel category"
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "noauth"
+					}
+				}
+			],
+			"description": "Product Catalog Management: Access endpoints to retrieve, create, update, and delete product information. Developers can test product listing, filtering, and pagination functionalities to ensure the smooth functioning of the product catalog.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Cart-Service",
+			"item": [
+				{
+					"name": "http://localhost:9191/api/cart/add-to-cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjIsImlhdCI6MTY4OTc3MjQ2MSwiZXhwIjozMDQxNTkwNDMwMDgxMH0.HfqlBUxUKqkYT0xmfZwfEFO-XyQ3uEOwuqtDKdkYdGM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"cartLineProduct\": {\r\n        \"productId\": 3\r\n    },\r\n    \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9191/api/carts/add-to-cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"carts",
+								"add-to-cart"
+							]
+						},
+						"description": "add product to user cart.\r\nonly logged in user can add product to cart.\r\nJWT token is required to run this API."
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9191/api/cart/getCartDetails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudGtodXJkQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwidXNlcklkIjo0LCJpYXQiOjE2ODk3NjIyNzQsImV4cCI6MzA0MTU3MjA5NDY3ODB9.pOo-__RMogtDHLVdwGG5cbfiLqxZfvA0gbLrwnEK6jY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/carts/getCartDetails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"carts",
+								"getCartDetails"
+							]
+						},
+						"description": "Get all cart items.\r\nJWT token is required to run this API."
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9191/api/cart/cart-by-cartId/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjIsImlhdCI6MTY4OTc3MjQ2MSwiZXhwIjozMDQxNTkwNDMwMDgxMH0.HfqlBUxUKqkYT0xmfZwfEFO-XyQ3uEOwuqtDKdkYdGM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/carts/cart-by-cartId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"carts",
+								"cart-by-cartId",
+								"1"
+							]
+						},
+						"description": "add product to user cart.\r\nonly logged in user can add product to cart.\r\nJWT token is required to run this API."
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9191/api/cart/deleteCartItem/3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjIsImlhdCI6MTY4OTc3MjQ2MSwiZXhwIjozMDQxNTkwNDMwMDgxMH0.HfqlBUxUKqkYT0xmfZwfEFO-XyQ3uEOwuqtDKdkYdGM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/carts/deleteCartItem/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"carts",
+								"deleteCartItem",
+								"3"
+							]
+						},
+						"description": "remove product from user cart.\r\nonly logged in user can remove product from cart.\r\nJWT token is required to run this API."
+					},
+					"response": []
+				}
+			],
+			"description": "Shopping Cart Management: Test the APIs that handle shopping cart functionalities, including adding items, updating quantities, and removing products from the cart.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "user-service",
+			"value": "http://localhost:9191/api/users/"
+		}
+	]
+}
