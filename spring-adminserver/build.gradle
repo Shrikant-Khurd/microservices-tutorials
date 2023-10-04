@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+java {
+    sourceCompatibility = '17'
+}
+group = 'com.smartshopper'
+version = '0.0.1-SNAPSHOT'
+description = 'microservices-spring-adminserver'
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'de.codecentric:spring-boot-admin-starter-server'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

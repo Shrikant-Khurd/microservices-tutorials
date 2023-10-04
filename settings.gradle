@@ -1,0 +1,10 @@
+rootProject.name = 'e-commerce-backend'
+include 'order-service'
+include 'Eureka-server'
+include 'API-gateway-service'
+include 'auth-service'
+include 'inventory-service'
+include 'product-service'
+include 'spring-adminserver'
+include 'userCart-service'
+

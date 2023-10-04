@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+java {
+    sourceCompatibility = '17'
+}
+group = 'com.smartshopper'
+version = '0.0.1-SNAPSHOT'
+description = 'microservice-eureka-server'
+
+dependencies {
+
+//    implementation 'de.codecentric:spring-boot-admin-starter-client'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
