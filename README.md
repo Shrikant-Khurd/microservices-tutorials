@@ -18,7 +18,7 @@ SmartShopper is a modern E-Commerce platform built using Microservice Architectu
 
 The application is composed of the following microservices:
 
-- **API Gateway Service**: 
+- **API Gateway Service**: Service provides a single entry point for clients to access the various services in the system
 - **Authentication Service**: Manages user authentication and authorization.
 - **Product Service**: Handles product catalog and details.
 - **Cart Service**: Manages user shopping carts.
