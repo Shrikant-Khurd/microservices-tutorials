@@ -31,3 +31,12 @@ The following tasks are planned for future development:
 - Search Functionality: Implement advanced search options for products.
 - Payment Integration: Integrate payment gateways for seamless transactions.
 - User Reviews and Ratings: Handles product reviews and ratings.
+- Generating Reports of Customer Orders and send the reports through email to the customer.
+
+## Built With
+   - Java (JDK 17) - The Main Programming Language and Framework.
+   - Spring Boot - Software Platform for creating and delivering Web Applications.
+   - MySQL - A relational database management system.
+   - MongoDB - A non-relational database management system.
+   - Maven and Gradle - Build tool & Dependency Management.
+   - Postman - Testing the API's(Endpoints).
